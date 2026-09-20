@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Bautizo - Rachel Dayanara Deleg</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blush: {
+                            50: '#fff5f7',
+                            100: '#ffeef2',
+                            200: '#ffdbe3',
+                            300: '#ffb8c8',
+                            400: '#f888a4',
+                            500: '#ee5b81',
+                            600: '#d93661',
+                        },
+                        gold: {
+                            300: '#f3e3b3',
+                            400: '#e5c97b',
+                            500: '#d4af37',
+                            600: '#b89228',
+                        },
+                        rosewood: '#5c3a42',
+                        bear: {
+                            light: '#e8c4a2',
+                            dark: '#b6835a',
+                        }
+                    },
+                    fontFamily: {
+                        script: ['"Great Vibes"', 'cursive'],
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #fff8fa;
+            color: #5c3a42;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-image: 
+                radial-gradient(#f888a4 0.6px, transparent 0.6px), 
+                radial-gradient(#e5c97b 0.6px, #fff8fa 0.6px);
+            background-size: 32px 32px;
+            background-position: 0 0, 16px 16px;
+        }
+        .font-script { font-family: 'Great Vibes', cursive; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 184, 200, 0.45);
+        }
+        .gold-shadow { box-shadow: 0 12px 35px -10px rgba(212, 175, 55, 0.25); }
+        .pink-shadow { box-shadow: 0 12px 30px -8px rgba(248, 136, 164, 0.25); }
+
+        /* Keyframes de animación sutiles */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(3deg); }
+        }
+        @keyframes floatReverse {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(8px) rotate(-3deg); }
+        }
+        @keyframes pulseSoft {
+            0%, 100% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.06); opacity: 1; }
+        }
+        @keyframes flutter {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(6deg) scale(1.08); }
+        }
+
+        .float-item { animation: floatSlow 5s ease-in-out infinite; }
+        .float-item-rev { animation: floatReverse 6s ease-in-out infinite; }
+        .pulse-soft { animation: pulseSoft 3s ease-in-out infinite; }
+        .flutter-item { animation: flutter 4s ease-in-out infinite; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col justify-between selection:bg-blush-300 selection:text-rosewood relative overflow-x-hidden">
+
+    <!-- Elementos flotantes de fondo (Globos, Nubes, Estrellas y Moños) -->
+    <div class="fixed top-6 left-2 sm:left-10 pointer-events-none float-item z-0 opacity-70">
+        <!-- Ramo de Globos Rosa/Dorado -->
+        <svg class="w-16 h-24 sm:w-20 sm:h-28" viewBox="0 0 100 120" fill="none">
+            <ellipse cx="40" cy="40" rx="20" ry="26" fill="#f888a4" opacity="0.85" />
+            <ellipse cx="60" cy="35" rx="18" ry="24" fill="#ffdbe3" opacity="0.9" />
+            <ellipse cx="50" cy="50" rx="16" ry="22" fill="#e5c97b" opacity="0.8" />
+            <path d="M40 66 Q45 90 50 110" stroke="#d4af37" stroke-width="1.5" fill="none"/>
+            <path d="M60 59 Q55 85 50 110" stroke="#f888a4" stroke-width="1.5" fill="none"/>
+            <path d="M50 72 Q50 90 50 110" stroke="#ee5b81" stroke-width="1.5" fill="none"/>
+        </svg>
+    </div>
+
+    <div class="fixed top-20 right-2 sm:right-10 pointer-events-none float-item-rev z-0 opacity-70">
+        <!-- Osita flotante con globo -->
+        <svg class="w-20 h-28 sm:w-24 sm:h-32" viewBox="0 0 100 120" fill="none">
+            <ellipse cx="50" cy="30" rx="22" ry="28" fill="#f888a4" />
+            <path d="M50 58 Q48 80 50 90" stroke="#f888a4" stroke-width="1.5" fill="none"/>
+            <!-- Nube pequeña debajo del globo -->
+            <path d="M25 100 Q30 90 40 95 Q50 85 65 92 Q75 90 80 100 Z" fill="#ffffff" opacity="0.9" />
+        </svg>
+    </div>
+
+    <main class="max-w-md mx-auto w-full px-4 py-8 space-y-6 relative z-10 text-center">
+
+        <!-- ENCABEZADO CON MOÑO ELEGANTE Y TITULO -->
+        <header class="space-y-2 relative">
+            <!-- Moño de niña ultra coquetón arriba del encabezado -->
+            <div class="w-20 h-16 mx-auto mb-1 float-item drop-shadow-md">
+                <svg viewBox="0 0 120 100" fill="none" class="w-full h-full">
+                    <g>
+                        <!-- Cinta Izquierda del Moño -->
+                        <path d="M 50 50 Q 30 70 20 90 Q 35 92 52 65 Z" fill="#f888a4" opacity="0.9" />
+                        <!-- Cinta Derecha del Moño -->
+                        <path d="M 70 50 Q 90 70 100 90 Q 85 92 68 65 Z" fill="#f888a4" opacity="0.9" />
+                        <!-- Oreja Izquierda del Moño -->
+                        <path d="M 60 48 C 30 20 5 45 52 55 Z" fill="url(#bowGradHeader)" stroke="#ee5b81" stroke-width="1" />
+                        <path d="M 55 46 C 35 28 18 45 48 52 Z" fill="#ffeef2" opacity="0.6" />
+                        <!-- Oreja Derecha del Moño -->
+                        <path d="M 60 48 C 90 20 115 45 68 55 Z" fill="url(#bowGradHeader)" stroke="#ee5b81" stroke-width="1" />
+                        <path d="M 65 46 C 85 28 102 45 72 52 Z" fill="#ffeef2" opacity="0.6" />
+                        <!-- Nudo Central con Brillo Dorado -->
+                        <rect x="52" y="42" width="16" height="16" rx="8" fill="url(#goldGradHeader)" stroke="#d4af37" stroke-width="1.5" />
+                        <circle cx="60" cy="50" r="3" fill="#ffffff" opacity="0.9" />
+                    </g>
+                    <defs>
+                        <linearGradient id="bowGradHeader" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#ffdbe3" />
+                            <stop offset="50%" stop-color="#f888a4" />
+                            <stop offset="100%" stop-color="#ee5b81" />
+                        </linearGradient>
+                        <linearGradient id="goldGradHeader" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#f3e3b3" />
+                            <stop offset="100%" stop-color="#d4af37" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+
+            <p class="text-xs uppercase tracking-[0.3em] text-gold-600 font-bold">Mi Bautizo</p>
+            <h1 class="font-script text-5xl sm:text-6xl text-rosewood drop-shadow-sm font-semibold">Rachel Dayanara</h1>
+            <p class="text-xs tracking-widest text-blush-600 font-semibold uppercase">Deleg Naula</p>
+        </header>
+
+        <!-- SECCIÓN DE FOTO CON MARCO CIRCULAR ELEGANTE DE FLORES, MARIPOSAS Y MOÑO DE NIÑA -->
+        <section class="glass-card rounded-3xl p-6 shadow-xl gold-shadow relative border border-blush-200">
+            <div class="mb-4 space-y-1">
+                <p class="font-script text-3xl sm:text-4xl text-blush-600">Nuestra Pequeña Princesa</p>
+                <p class="text-xs uppercase tracking-widest text-rosewood/80 font-semibold max-w-xs mx-auto">
+                    Te invito a formar parte de esta celebración para recibir la luz del Señor en mi corazón
+                </p>
+            </div>
+
+            <!-- MARCO CIRCULAR INSPIRADO EN LA IMAGEN PROVISTA -->
+            <div class="relative w-64 h-64 sm:w-72 sm:h-72 mx-auto my-6 flex items-center justify-center">
+                
+                <!-- MOÑO DE NIÑA CORONANDO EL MARCO CIRCULAR EN LA PARTE SUPERIOR CENTRAL -->
+                <div class="absolute -top-6 z-40 w-24 sm:w-28 h-20 pointer-events-none drop-shadow-lg pulse-soft">
+                    <svg viewBox="0 0 120 100" fill="none" class="w-full h-full">
+                        <g>
+                            <!-- Cintas Colgantes del Moño -->
+                            <path d="M 48 52 C 38 70 20 88 15 95 C 28 95 44 85 54 62 Z" fill="url(#bowRibbonGrad)" stroke="#ee5b81" stroke-width="0.8" />
+                            <path d="M 72 52 C 82 70 100 88 105 95 C 92 95 76 85 66 62 Z" fill="url(#bowRibbonGrad)" stroke="#ee5b81" stroke-width="0.8" />
+                            <!-- Oreja Izquierda Esponjosa -->
+                            <path d="M 60 48 C 25 10 0 45 52 56 Z" fill="url(#bowGirlGrad)" stroke="#ee5b81" stroke-width="1.2" />
+                            <path d="M 56 46 C 30 22 12 42 48 52 Z" fill="#ffffff" opacity="0.5" />
+                            <!-- Oreja Derecha Esponjosa -->
+                            <path d="M 60 48 C 95 10 120 45 68 56 Z" fill="url(#bowGirlGrad)" stroke="#ee5b81" stroke-width="1.2" />
+                            <path d="M 64 46 C 90 22 108 42 72 52 Z" fill="#ffffff" opacity="0.5" />
+                            <!-- Nudo Elegante en el Centro con Gema/Perla Dorada -->
+                            <ellipse cx="60" cy="50" rx="10" ry="9" fill="url(#goldCenterGrad)" stroke="#b89228" stroke-width="1.5" />
+                            <circle cx="58" cy="47" r="3" fill="#ffffff" opacity="0.9" />
+                            <circle cx="63" cy="53" r="1.5" fill="#ffffff" opacity="0.8" />
+                        </g>
+                        <defs>
+                            <linearGradient id="bowGirlGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#ffeef2" />
+                                <stop offset="40%" stop-color="#f888a4" />
+                                <stop offset="100%" stop-color="#ee5b81" />
+                            </linearGradient>
+                            <linearGradient id="bowRibbonGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#f888a4" />
+                                <stop offset="100%" stop-color="#ffdbe3" />
+                            </linearGradient>
+                            <linearGradient id="goldCenterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#f3e3b3" />
+                                <stop offset="50%" stop-color="#e5c97b" />
+                                <stop offset="100%" stop-color="#d4af37" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+
+                <!-- Anillo Exterior Dorado con Gradiente y Sombra -->
+                <div class="absolute inset-0 rounded-full border-4 border-gold-500 shadow-md bg-gradient-to-tr from-gold-600 via-gold-300 to-gold-500 p-[3px]">
+                    <div class="w-full h-full rounded-full border-2 border-white/80"></div>
+                </div>
+
+                <!-- Contenedor Circular de la Foto de Rachel -->
+                <div class="w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden border-2 border-gold-400 bg-white shadow-inner relative z-10 group">
+                    <img 
+                        src="foto.jpg" 
+                        alt="Rachel Dayanara Deleg" 
+                        onerror="this.onerror=null; this.src='https://placehold.co/400x400/ffeef2/5c3a42?text=Rachel+Dayanara';"
+                        class="w-full h-full object-cover rounded-full transform group-hover:scale-105 transition-transform duration-500" 
+                    />
+                </div>
+
+                <!-- DECORACIÓN FLORAL ACUARELA - LADO IZQUIERDO ARRIBA -->
+                <div class="absolute -top-3 -left-4 w-28 sm:w-32 z-20 pointer-events-none float-item">
+                    <svg viewBox="0 0 120 120" class="w-full h-full drop-shadow-md">
+                        <!-- Ramos de Flores Acuarela Rosa, Rubí y Verde -->
+                        <g opacity="0.95">
+                            <circle cx="45" cy="45" r="16" fill="#f888a4"/>
+                            <circle cx="42" cy="42" r="12" fill="#ffeef2"/>
+                            <circle cx="45" cy="45" r="8" fill="#ee5b81"/>
+                            <circle cx="28" cy="62" r="12" fill="#ffdbe3"/>
+                            <circle cx="28" cy="62" r="6" fill="#f888a4"/>
+                            <!-- Hojas Verdes Acuarela -->
+                            <path d="M 20 30 Q 10 15 30 20 Q 35 30 20 30 Z" fill="#84a98c"/>
+                            <path d="M 50 20 Q 55 5 65 18 Q 60 28 50 20 Z" fill="#52796f"/>
+                            <path d="M 15 50 Q 0 50 10 65 Q 22 60 15 50 Z" fill="#84a98c"/>
+                            <!-- Pequeñas bayas/flores azul turquesa suave -->
+                            <circle cx="62" cy="35" r="4" fill="#6b9080"/>
+                            <circle cx="68" cy="42" r="3" fill="#a8ded0"/>
+                        </g>
+                    </svg>
+                </div>
+
+                <!-- DECORACIÓN FLORAL ACUARELA - LADO DERECHO ABAJO -->
+                <div class="absolute -bottom-3 -right-4 w-28 sm:w-32 z-20 pointer-events-none float-item-rev">
+                    <svg viewBox="0 0 120 120" class="w-full h-full drop-shadow-md">
+                        <g opacity="0.95">
+                            <circle cx="75" cy="75" r="18" fill="#ee5b81"/>
+                            <circle cx="72" cy="72" r="13" fill="#ffeef2"/>
+                            <circle cx="75" cy="75" r="7" fill="#d93661"/>
+                            <circle cx="92" cy="55" r="11" fill="#f888a4"/>
+                            <circle cx="92" cy="55" r="5" fill="#ffdbe3"/>
+                            <!-- Hojas Verdes -->
+                            <path d="M 80 100 Q 95 110 85 90 Q 75 88 80 100 Z" fill="#52796f"/>
+                            <path d="M 100 75 Q 115 80 105 65 Q 92 68 100 75 Z" fill="#84a98c"/>
+                            <!-- Detalle de Bayas Silvestres -->
+                            <circle cx="60" cy="88" r="4" fill="#6b9080"/>
+                            <circle cx="52" cy="82" r="3.5" fill="#e5c97b"/>
+                            <circle cx="56" cy="94" r="3" fill="#a8ded0"/>
+                        </g>
+                    </svg>
+                </div>
+
+                <!-- MARIPOSA DORADA ELEGANTE - ESQUINA SUPERIOR DERECHA -->
+                <div class="absolute top-1 right-1 sm:top-2 sm:right-2 z-30 pointer-events-none flutter-item drop-shadow-lg">
+                    <svg class="w-10 h-10 sm:w-12 sm:h-12" viewBox="0 0 100 100" fill="none">
+                        <!-- Alas Superiores -->
+                        <path d="M 50 48 C 30 15 6 25 22 52 C 38 62 48 52 50 48 Z" fill="url(#goldGradient)" opacity="0.95" />
+                        <path d="M 50 48 C 70 15 94 25 78 52 C 62 62 52 52 50 48 Z" fill="url(#goldGradient)" opacity="0.95" />
+                        <!-- Alas Inferiores -->
+                        <path d="M 50 52 C 34 62 20 80 38 88 C 50 90 48 68 50 52 Z" fill="url(#goldGradient)" opacity="0.85" />
+                        <path d="M 50 52 C 66 62 80 80 62 88 C 50 90 52 68 50 52 Z" fill="url(#goldGradient)" opacity="0.85" />
+                        <!-- Detalle Filigrana Dorado en Alas -->
+                        <path d="M 50 48 Q 30 30 25 48" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                        <path d="M 50 48 Q 70 30 75 48" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                        <!-- Cuerpo Mariposa -->
+                        <ellipse cx="50" cy="52" rx="3" ry="16" fill="#b89228" />
+                        <!-- Antenas -->
+                        <path d="M 50 38 Q 44 28 40 26 M 50 38 Q 56 28 60 26" stroke="#b89228" stroke-width="1.5" stroke-linecap="round" fill="none" />
+                        
+                        <defs>
+                            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#f3e3b3" />
+                                <stop offset="50%" stop-color="#d4af37" />
+                                <stop offset="100%" stop-color="#b89228" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+
+                <!-- MARIPOSA DORADA ELEGANTE - ESQUINA INFERIOR IZQUIERDA -->
+                <div class="absolute bottom-2 left-1 sm:bottom-3 sm:left-2 z-30 pointer-events-none float-item drop-shadow-lg">
+                    <svg class="w-9 h-9 sm:w-11 sm:h-11 transform -rotate-12" viewBox="0 0 100 100" fill="none">
+                        <!-- Alas Superiores -->
+                        <path d="M 50 48 C 30 15 6 25 22 52 C 38 62 48 52 50 48 Z" fill="url(#goldGradient2)" opacity="0.95" />
+                        <path d="M 50 48 C 70 15 94 25 78 52 C 62 62 52 52 50 48 Z" fill="url(#goldGradient2)" opacity="0.95" />
+                        <!-- Alas Inferiores -->
+                        <path d="M 50 52 C 34 62 20 80 38 88 C 50 90 48 68 50 52 Z" fill="url(#goldGradient2)" opacity="0.85" />
+                        <path d="M 50 52 C 66 62 80 80 62 88 C 50 90 52 68 50 52 Z" fill="url(#goldGradient2)" opacity="0.85" />
+                        <ellipse cx="50" cy="52" rx="3" ry="16" fill="#b89228" />
+                        <path d="M 50 38 Q 44 28 40 26 M 50 38 Q 56 28 60 26" stroke="#b89228" stroke-width="1.5" stroke-linecap="round" fill="none" />
+                        <defs>
+                            <linearGradient id="goldGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#f3e3b3" />
+                                <stop offset="50%" stop-color="#e5c97b" />
+                                <stop offset="100%" stop-color="#d4af37" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Banner / Mensaje debajo de foto con detalles de ositas y huellitas -->
+            <div class="mt-2 flex justify-center items-center space-x-2 text-blush-600 text-xs font-semibold bg-white/80 py-1.5 px-4 rounded-full border border-blush-200 inline-flex shadow-sm">
+                <i class="fa-solid fa-paw text-blush-400"></i>
+                <span>Con la bendición de Dios y el amor de la familia</span>
+                <i class="fa-solid fa-paw text-blush-400"></i>
+            </div>
+        </section>
+
+        
+
+        <!-- SECCIÓN PAPÁS Y PADRINOS CON LAZOS / MOÑOS INFANTILES ELEGANTES -->
+        <section class="glass-card rounded-2xl p-5 border border-blush-200 relative">
+            <div class="grid grid-cols-2 gap-4 text-center">
+                <div class="space-y-1.5 border-r border-blush-200/80 pr-2">
+                    <div class="flex items-center justify-center space-x-1.5 text-blush-500">
+                        <!-- Mini Moño SVG para Papás -->
+                        <svg class="w-4 h-4" viewBox="0 0 100 80" fill="currentColor">
+                            <path d="M50 40 C20 10 5 35 40 45 C5 55 20 80 50 40 Z" />
+                            <path d="M50 40 C80 10 95 35 60 45 C95 55 80 80 50 40 Z" />
+                            <circle cx="50" cy="40" r="6" fill="#d4af37" />
+                        </svg>
+                        <span class="text-xs sm:text-sm uppercase font-bold tracking-wider text-gold-600">Mis Papás</span>
+                    </div>
+                    <p class="text-sm font-semibold text-rosewood">Joson Deleg</p>
+                    <p class="text-sm font-semibold text-rosewood">Sandra Naula</p>
+                </div>
+                <div class="space-y-1.5 pl-2">
+                    <div class="flex items-center justify-center space-x-1.5 text-blush-500">
+                        <!-- Mini Moño SVG para Padrinos -->
+                        <svg class="w-4 h-4" viewBox="0 0 100 80" fill="currentColor">
+                            <path d="M50 40 C20 10 5 35 40 45 C5 55 20 80 50 40 Z" />
+                            <path d="M50 40 C80 10 95 35 60 45 C95 55 80 80 50 40 Z" />
+                            <circle cx="50" cy="40" r="6" fill="#d4af37" />
+                        </svg>
+                        <span class="text-xs sm:text-sm uppercase font-bold tracking-wider text-gold-600">Mis Padrinos</span>
+                    </div>
+                    <p class="text-sm font-semibold text-rosewood">Fausto Deleg</p>
+                    <p class="text-sm font-semibold text-rosewood">Blanca Deleg</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DETALLES DEL EVENTO -->
+        <section class="glass-card rounded-3xl p-6 shadow-md border border-blush-200 space-y-6">
+            <!-- Fecha destacado -->
+            <div class="py-2 border-b border-blush-200/60">
+                <span class="text-xs uppercase font-bold text-gold-600 tracking-widest flex items-center justify-center gap-1">
+                    <i class="fa-regular fa-calendar text-gold-500"></i> Sábado
+                </span>
+                <div class="flex items-center justify-center space-x-3 my-1">
+                    <span class="text-xs sm:text-sm font-bold uppercase tracking-wider text-rosewood">10 OCTUBRE</span>
+          
+                   
+                </div>
+            </div>
+			<!-- CUENTA REGRESIVA CON NUBES Y CORAZONES -->
+       
+            <div class="absolute -right-4 -bottom-4 opacity-15 pointer-events-none">
+                <i class="fa-solid fa-heart text-8xl text-blush-400"></i>
+            </div>
+
+            <h3 class="text-xs uppercase font-bold text-blush-600 tracking-widest mb-3 flex items-center justify-center space-x-2">
+                <i class="fa-solid fa-heart text-blush-400 animate-pulse"></i>
+                <span>Faltan Muy Pocos Días</span>
+                <i class="fa-solid fa-heart text-blush-400 animate-pulse"></i>
+            </h3>
+            
+            <div class="grid grid-cols-4 gap-2 text-center relative z-10" id="countdown">
+                <div class="bg-white/90 rounded-xl p-2 border border-blush-100 shadow-sm">
+                    <span id="days" class="font-serif text-2xl font-bold text-rosewood block">00</span>
+                    <span class="text-[10px] uppercase font-semibold text-gray-500">Días</span>
+                </div>
+                <div class="bg-white/90 rounded-xl p-2 border border-blush-100 shadow-sm">
+                    <span id="hours" class="font-serif text-2xl font-bold text-rosewood block">00</span>
+                    <span class="text-[10px] uppercase font-semibold text-gray-500">Horas</span>
+                </div>
+                <div class="bg-white/90 rounded-xl p-2 border border-blush-100 shadow-sm">
+                    <span id="minutes" class="font-serif text-2xl font-bold text-rosewood block">00</span>
+                    <span class="text-[10px] uppercase font-semibold text-gray-500">Min</span>
+                </div>
+                <div class="bg-white/90 rounded-xl p-2 border border-blush-100 shadow-sm">
+                    <span id="seconds" class="font-serif text-2xl font-bold text-rosewood block">00</span>
+                    <span class="text-[10px] uppercase font-semibold text-gray-500">Seg</span>
+                </div>
+            </div>
+        
+
+            <!-- Tarjetas de Misa y Recepción -->
+            <div class="grid grid-cols-1 gap-5 text-center">
+                <!-- Misa de Bautizo -->
+                <div class="bg-white/95 p-4 rounded-2xl border border-blush-100 shadow-sm space-y-2 relative overflow-hidden transition-all hover:border-blush-300">
+                    <div class="w-12 h-12 mx-auto rounded-full bg-blush-100 flex items-center justify-center text-blush-500 shadow-sm">
+                        <i class="fa-solid fa-church text-xl"></i>
+                    </div>
+                    <h3 class="font-script text-3xl text-rosewood">Misa de Bautizo</h3>
+                    <div class="inline-block bg-blush-50 px-3 py-0.5 rounded-full border border-blush-200">
+                        <p class="text-xs font-bold text-gold-600 uppercase">7:00 PM</p>
+                    </div>
+                    <p class="text-sm font-semibold text-rosewood">Iglesia de Narancay Alto</p>
+                    
+                    <a href="https://www.google.com/maps/search/?api=1&query=Iglesia+de+Narancay+Cuenca" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center space-x-2 text-xs font-semibold text-blush-600 hover:text-blush-700 bg-blush-50 hover:bg-blush-100 px-4 py-2 rounded-full border border-blush-200 transition-colors mt-2 shadow-sm">
+                        <i class="fa-solid fa-map-pin text-gold-500"></i>
+                        <span>Ver Ubicación en Mapa</span>
+                    </a>
+                </div>
+
+                <!-- Recepción -->
+                <div class="bg-white/95 p-4 rounded-2xl border border-blush-100 shadow-sm space-y-2 relative overflow-hidden transition-all hover:border-blush-300">
+                    <div class="w-12 h-12 mx-auto rounded-full bg-blush-100 flex items-center justify-center text-blush-500 shadow-sm">
+                        <i class="fa-solid fa-champagne-glasses text-xl"></i>
+                    </div>
+                    <h3 class="font-script text-3xl text-rosewood">Recepción</h3>
+				 <p class="text-xs font-bold text-gold-600 uppercase">8:00 PM</p>
+                    <p class="text-sm font-semibold text-rosewood px-2">Asociación Frente Unido de Taxistas del Azuay</p>
+                    <p class="text-xs text-rosewood/70">Dirección: Puruhuaes y Av. Totoracocha</p>
+                    
+                    <a href="https://maps.app.goo.gl/9a7Azo64cajvWgXg6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center space-x-2 text-xs font-semibold text-blush-600 hover:text-blush-700 bg-blush-50 hover:bg-blush-100 px-4 py-2 rounded-full border border-blush-200 transition-colors mt-2 shadow-sm">
+                        <i class="fa-solid fa-location-arrow text-gold-500"></i>
+                        <span>Ver Ubicación de Recepción</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Botón agendar en Google Calendar -->
+            <div class="pt-2">
+                <button id="addCalendarBtn" class="w-full bg-gradient-to-r from-blush-400 via-blush-500 to-blush-600 hover:from-blush-500 hover:to-blush-700 text-white font-semibold text-xs uppercase tracking-widest py-3.5 px-4 rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center space-x-2 cursor-pointer">
+                    <i class="fa-regular fa-calendar-plus text-lg"></i>
+                    <span>Agendar en Google Calendar</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- MENSAJE FINAL CON OSITA Y GLOBOS -->
+        <div class="py-4 text-center space-y-2 relative">
+            <div class="w-12 h-12 mx-auto text-blush-400 opacity-90 float-item">
+                <svg viewBox="0 0 100 100" fill="currentColor">
+                    <circle cx="30" cy="30" r="12" fill="#d09a73" />
+                    <circle cx="70" cy="30" r="12" fill="#d09a73" />
+                    <circle cx="50" cy="50" r="28" fill="#d09a73" />
+                    <ellipse cx="50" cy="58" rx="10" ry="7" fill="#ffffff" />
+                    <circle cx="50" cy="54" r="3" fill="#5c3a42" />
+                    <path d="M50,15 C40,8 38,20 50,17 C62,20 60,8 50,15 Z" fill="#f888a4" />
+                </svg>
+            </div>
+            <span class="font-script text-4xl text-blush-500 block">¡Te esperamos!</span>
+            <p class="text-xs text-rosewood/80 italic max-w-xs mx-auto">
+                Tu presencia es el mejor regalo para este día tan especial y bendecido.
+            </p>
+        </div>
+    </main>
+
+    <footer class="relative z-10 py-5 text-center text-xs text-rosewood/70 border-t border-blush-200/60 bg-white/50 backdrop-blur-sm">
+        <p class="flex items-center justify-center gap-1">
+            <span>Invitación Digital de Bautizo</span>
+            <span>&bull;</span>
+            <i class="fa-solid fa-heart text-blush-400 text-[10px]"></i>
+            <span>Rachel Dayanara</span>
+        </p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Fecha objetivo: 10 de Octubre de 2026, 07:00:00 AM
+            const targetDate = new Date("October 10, 2026 07:00:00").getTime();
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const difference = targetDate - now;
+
+                if (difference > 0) {
+                    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                    document.getElementById('days').textContent = days < 10 ? '0' + days : days;
+                    document.getElementById('hours').textContent = hours < 10 ? '0' + hours : hours;
+                    document.getElementById('minutes').textContent = minutes < 10 ? '0' + minutes : minutes;
+                    document.getElementById('seconds').textContent = seconds < 10 ? '0' + seconds : seconds;
+                } else {
+                    document.getElementById('countdown').innerHTML = "<div class='col-span-4 py-2 font-script text-3xl text-blush-600'>¡Hoy es el bendecido día!</div>";
+                }
+            }
+
+            setInterval(updateCountdown, 1000);
+            updateCountdown();
+
+            // Evento para agregar a Google Calendar
+            document.getElementById('addCalendarBtn').addEventListener('click', () => {
+                const title = encodeURIComponent("Mi Bautizo - Rachel Dayanara Deleg");
+                const details = encodeURIComponent("Celebración de la Ceremonia de Bautizo a las 7:00 am en la Iglesia de Narancay Alto, seguida de la recepción a las 8:00 pm en la Asociación Frente Unido de Taxistas del Azuay.");
+                const location = encodeURIComponent("Iglesia de Narancay Alto, Cuenca, Ecuador");
+                const startDate = "20261010T070000";
+                const endDate = "20261010T230000";
+
+                const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startDate}/${endDate}&details=${details}&location=${location}`;
+                window.open(googleCalendarUrl, '_blank');
+            });
+        });
+    </script>
+</body>
+</html>
