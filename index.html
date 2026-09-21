@@ -95,6 +95,23 @@
     <!-- MÚSICA DE FONDO: guarda tu canción como "musica.mp3" junto a este archivo -->
     <audio id="bgMusic" src="musica.mp3" loop preload="auto"></audio>
 
+    <!-- PORTADA: un solo toque abre la invitación y activa la música -->
+    <div id="welcomeScreen" class="fixed inset-0 z-[100] flex flex-col items-center justify-center text-center px-6 transition-opacity duration-700"
+        style="background-color:#fff8fa; background-image: radial-gradient(#f888a4 0.6px, transparent 0.6px), radial-gradient(#e5c97b 0.6px, #fff8fa 0.6px); background-size:32px 32px; background-position:0 0, 16px 16px;">
+        <div class="w-20 h-20 rounded-full bg-gradient-to-br from-gold-300 via-gold-400 to-gold-500 flex items-center justify-center text-white shadow-lg mb-5 float-item">
+            <i class="fa-regular fa-envelope-open text-3xl"></i>
+        </div>
+        <p class="text-xs uppercase tracking-[0.3em] text-gold-600 font-bold">Estás invitado al bautizo de</p>
+        <h1 class="font-script text-5xl text-rosewood mt-2 mb-1">Rachel Dayanara</h1>
+        <p class="text-xs tracking-widest text-blush-600 font-semibold uppercase mb-8">Deleg Naula</p>
+        <button id="openInvitationBtn" type="button"
+            class="bg-gradient-to-r from-blush-400 via-blush-500 to-blush-600 text-white font-semibold text-xs uppercase tracking-widest py-3.5 px-8 rounded-full shadow-lg flex items-center space-x-2 pulse-soft cursor-pointer">
+            <i class="fa-solid fa-heart"></i>
+            <span>Abrir invitación</span>
+        </button>
+        <p class="text-[11px] text-rosewood/60 mt-4"><i class="fa-solid fa-music mr-1"></i>Con música</p>
+    </div>
+
     <!-- Botón flotante para activar / pausar la música -->
     <button id="musicBtn" type="button" aria-label="Activar música"
         class="fixed bottom-5 right-4 z-50 w-12 h-12 rounded-full bg-gradient-to-br from-blush-400 to-blush-600 text-white shadow-lg border-2 border-gold-400 flex items-center justify-center pulse-soft">
@@ -494,19 +511,16 @@
                 }
             });
 
-            // Intenta sonar al abrir; si el navegador lo bloquea, suena con el primer toque
-            function firstInteraction(e) {
-                if (e.target.closest('#musicBtn')) return;
-                tryPlay().then(() => {
-                    if (playing) {
-                        document.removeEventListener('click', firstInteraction);
-                        document.removeEventListener('touchend', firstInteraction);
-                    }
-                });
-            }
-            document.addEventListener('click', firstInteraction);
-            document.addEventListener('touchend', firstInteraction);
-            tryPlay();
+            // Portada: al tocar "Abrir invitación" suena la música y se muestra la página
+            const welcome = document.getElementById('welcomeScreen');
+            document.body.style.overflow = 'hidden';
+            document.getElementById('openInvitationBtn').addEventListener('click', () => {
+                tryPlay(); // debe llamarse dentro del toque para que el navegador lo permita
+                welcome.style.opacity = '0';
+                welcome.style.pointerEvents = 'none';
+                document.body.style.overflow = '';
+                setTimeout(() => welcome.remove(), 700);
+            });
 
             // Evento para agregar a Google Calendar
             document.getElementById('addCalendarBtn').addEventListener('click', () => {
@@ -523,4 +537,3 @@
     </script>
 </body>
 </html>
-
