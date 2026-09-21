@@ -92,6 +92,15 @@
 </head>
 <body class="antialiased min-h-screen flex flex-col justify-between selection:bg-blush-300 selection:text-rosewood relative overflow-x-hidden">
 
+    <!-- MÚSICA DE FONDO: guarda tu canción como "musica.mp3" junto a este archivo -->
+    <audio id="bgMusic" src="musica.mp3" loop preload="auto"></audio>
+
+    <!-- Botón flotante para activar / pausar la música -->
+    <button id="musicBtn" type="button" aria-label="Activar música"
+        class="fixed bottom-5 right-4 z-50 w-12 h-12 rounded-full bg-gradient-to-br from-blush-400 to-blush-600 text-white shadow-lg border-2 border-gold-400 flex items-center justify-center pulse-soft">
+        <i id="musicIcon" class="fa-solid fa-music"></i>
+    </button>
+
     <!-- Elementos flotantes de fondo (Globos, Nubes, Estrellas y Moños) -->
     <div class="fixed top-6 left-2 sm:left-10 pointer-events-none float-item z-0 opacity-70">
         <!-- Ramo de Globos Rosa/Dorado -->
@@ -167,8 +176,6 @@
 
             <!-- MARCO CIRCULAR INSPIRADO EN LA IMAGEN PROVISTA -->
             <div class="relative w-64 h-64 sm:w-72 sm:h-72 mx-auto my-6 flex items-center justify-center">
-                
-                
 
                 <!-- Anillo Exterior Dorado con Gradiente y Sombra -->
                 <div class="absolute inset-0 rounded-full border-4 border-gold-500 shadow-md bg-gradient-to-tr from-gold-600 via-gold-300 to-gold-500 p-[3px]">
@@ -184,8 +191,7 @@
                         class="w-full h-full object-cover rounded-full transform group-hover:scale-105 transition-transform duration-500" 
                     />
                 </div>
-<!-- MOÑO DE NIÑA CORONANDO EL MARCO CIRCULAR EN LA PARTE SUPERIOR CENTRAL -->
-                
+
                 <!-- DECORACIÓN FLORAL ACUARELA - LADO IZQUIERDO ARRIBA -->
                 <div class="absolute -top-3 -left-4 w-28 sm:w-32 z-20 pointer-events-none float-item">
                     <svg viewBox="0 0 120 120" class="w-full h-full drop-shadow-md">
@@ -275,31 +281,6 @@
                     </svg>
                 </div>
             </div>
-         <div class="absolute top-1 right-1 sm:top-2 sm:right-2 z-30 pointer-events-none flutter-item drop-shadow-lg">
-                    <svg class="w-10 h-10 sm:w-12 sm:h-12" viewBox="0 0 100 100" fill="none">
-                        <!-- Alas Superiores -->
-                        <path d="M 50 48 C 30 15 6 25 22 52 C 38 62 48 52 50 48 Z" fill="url(#goldGradient)" opacity="0.95" />
-                        <path d="M 50 48 C 70 15 94 25 78 52 C 62 62 52 52 50 48 Z" fill="url(#goldGradient)" opacity="0.95" />
-                        <!-- Alas Inferiores -->
-                        <path d="M 50 52 C 34 62 20 80 38 88 C 50 90 48 68 50 52 Z" fill="url(#goldGradient)" opacity="0.85" />
-                        <path d="M 50 52 C 66 62 80 80 62 88 C 50 90 52 68 50 52 Z" fill="url(#goldGradient)" opacity="0.85" />
-                        <!-- Detalle Filigrana Dorado en Alas -->
-                        <path d="M 50 48 Q 30 30 25 48" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-                        <path d="M 50 48 Q 70 30 75 48" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-                        <!-- Cuerpo Mariposa -->
-                        <ellipse cx="50" cy="52" rx="3" ry="16" fill="#b89228" />
-                        <!-- Antenas -->
-                        <path d="M 50 38 Q 44 28 40 26 M 50 38 Q 56 28 60 26" stroke="#b89228" stroke-width="1.5" stroke-linecap="round" fill="none" />
-                        
-                        <defs>
-                            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#f3e3b3" />
-                                <stop offset="50%" stop-color="#d4af37" />
-                                <stop offset="100%" stop-color="#b89228" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                </div>
 
             <!-- Banner / Mensaje debajo de foto con detalles de ositas y huellitas -->
             <div class="mt-2 flex justify-center items-center space-x-2 text-blush-600 text-xs font-semibold bg-white/80 py-1.5 px-4 rounded-full border border-blush-200 inline-flex shadow-sm">
@@ -308,8 +289,6 @@
                 <i class="fa-solid fa-paw text-blush-400"></i>
             </div>
         </section>
-
-        
 
         <!-- SECCIÓN PAPÁS Y PADRINOS CON LAZOS / MOÑOS INFANTILES ELEGANTES -->
         <section class="glass-card rounded-2xl p-5 border border-blush-200 relative">
@@ -352,12 +331,10 @@
                 </span>
                 <div class="flex items-center justify-center space-x-3 my-1">
                     <span class="text-xs sm:text-sm font-bold uppercase tracking-wider text-rosewood">10 OCTUBRE</span>
-          
-                   
                 </div>
             </div>
-			<!-- CUENTA REGRESIVA CON NUBES Y CORAZONES -->
-       
+
+            <!-- CUENTA REGRESIVA CON NUBES Y CORAZONES -->
             <div class="absolute -right-4 -bottom-4 opacity-15 pointer-events-none">
                 <i class="fa-solid fa-heart text-8xl text-blush-400"></i>
             </div>
@@ -386,7 +363,6 @@
                     <span class="text-[10px] uppercase font-semibold text-gray-500">Seg</span>
                 </div>
             </div>
-        
 
             <!-- Tarjetas de Misa y Recepción -->
             <div class="grid grid-cols-1 gap-5 text-center">
@@ -413,7 +389,7 @@
                         <i class="fa-solid fa-champagne-glasses text-xl"></i>
                     </div>
                     <h3 class="font-script text-3xl text-rosewood">Recepción</h3>
-				 <p class="text-xs font-bold text-gold-600 uppercase">8:00 PM</p>
+                    <p class="text-xs font-bold text-gold-600 uppercase">8:00 PM</p>
                     <p class="text-sm font-semibold text-rosewood px-2">Asociación Frente Unido de Taxistas del Azuay</p>
                     <p class="text-xs text-rosewood/70">Dirección: Puruhuaes y Av. Totoracocha</p>
                     
@@ -463,8 +439,8 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Fecha objetivo: 10 de Octubre de 2026, 07:00:00 AM
-            const targetDate = new Date("October 10, 2026 07:00:00").getTime();
+            // Fecha objetivo: 10 de Octubre de 2026, 7:00 PM (19:00)
+            const targetDate = new Date("October 10, 2026 19:00:00").getTime();
 
             function updateCountdown() {
                 const now = new Date().getTime();
@@ -488,13 +464,57 @@
             setInterval(updateCountdown, 1000);
             updateCountdown();
 
+            // ===== MÚSICA DE FONDO =====
+            const music = document.getElementById('bgMusic');
+            const musicBtn = document.getElementById('musicBtn');
+            const musicIcon = document.getElementById('musicIcon');
+            music.volume = 0.5; // volumen suave (0 a 1)
+            let playing = false;
+
+            function setMusicState(on) {
+                playing = on;
+                musicIcon.className = on ? 'fa-solid fa-pause' : 'fa-solid fa-music';
+                musicBtn.classList.toggle('pulse-soft', !on);
+                musicBtn.setAttribute('aria-label', on ? 'Pausar música' : 'Activar música');
+            }
+
+            function tryPlay() {
+                return music.play()
+                    .then(() => setMusicState(true))
+                    .catch(() => setMusicState(false));
+            }
+
+            // Botón flotante: activar / pausar
+            musicBtn.addEventListener('click', () => {
+                if (playing) {
+                    music.pause();
+                    setMusicState(false);
+                } else {
+                    tryPlay();
+                }
+            });
+
+            // Intenta sonar al abrir; si el navegador lo bloquea, suena con el primer toque
+            function firstInteraction(e) {
+                if (e.target.closest('#musicBtn')) return;
+                tryPlay().then(() => {
+                    if (playing) {
+                        document.removeEventListener('click', firstInteraction);
+                        document.removeEventListener('touchend', firstInteraction);
+                    }
+                });
+            }
+            document.addEventListener('click', firstInteraction);
+            document.addEventListener('touchend', firstInteraction);
+            tryPlay();
+
             // Evento para agregar a Google Calendar
             document.getElementById('addCalendarBtn').addEventListener('click', () => {
                 const title = encodeURIComponent("Mi Bautizo - Rachel Dayanara Deleg");
-                const details = encodeURIComponent("Celebración de la Ceremonia de Bautizo a las 7:00 am en la Iglesia de Narancay Alto, seguida de la recepción a las 8:00 pm en la Asociación Frente Unido de Taxistas del Azuay.");
+                const details = encodeURIComponent("Celebración de la Ceremonia de Bautizo a las 7:00 pm en la Iglesia de Narancay Alto, seguida de la recepción a las 8:00 pm en la Asociación Frente Unido de Taxistas del Azuay.");
                 const location = encodeURIComponent("Iglesia de Narancay Alto, Cuenca, Ecuador");
-                const startDate = "20261010T070000";
-                const endDate = "20261010T230000";
+                const startDate = "20261010T190000";
+                const endDate = "20261010T235900";
 
                 const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startDate}/${endDate}&details=${details}&location=${location}`;
                 window.open(googleCalendarUrl, '_blank');
@@ -503,3 +523,4 @@
     </script>
 </body>
 </html>
+
